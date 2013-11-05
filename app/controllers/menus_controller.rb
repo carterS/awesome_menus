@@ -7,6 +7,11 @@ class MenusController < ApplicationController
 
 	def create
 		@menu = Menu.create(params[:menu])
-		redirect_to root_path
+		if @menu.save
+			render json: { menu_title: render_to_string(partial:'menu', locals: {menu:@menu}) }
+		else
+			render json: { error: @menu.errors.full_messages.join(', ')}, status: :unprocessable_entity
+		end
+		#redirect_to root_path
 	end
 end

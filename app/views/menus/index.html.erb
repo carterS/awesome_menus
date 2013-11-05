@@ -1,8 +1,7 @@
-lots of menus
-<br>
+<h1>Welcome to Awesome Menus</h1>
 <%= render 'form' %>
-
-<ul>
+<h3>Menus</h3>
+<ul id="menu_list">
 	<% @menus.each do |menu| %>
 	<%= render partial: 'menu', locals: {menu: menu} %>
 	<% end %>
