@@ -1,3 +1,9 @@
 lots of menus
 <br>
-<%= render 'menu' %>
+<%= render 'form' %>
+
+<ul>
+	<% @menus.each do |menu| %>
+	<%= render partial: 'menu', locals: {menu: menu} %>
+	<% end %>
+</ul>
