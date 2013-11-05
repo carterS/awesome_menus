@@ -6,5 +6,6 @@ class MenusController < ApplicationController
 
 	def create
 		@menu = Menu.create(params[:menu])
+		redirect_to root_path
 	end
 end
